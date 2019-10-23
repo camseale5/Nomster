@@ -6,3 +6,18 @@
 </div>
 
 <% end %>
+<h1>Places</h1>
+
+<%= will_paginate @places %>
+
+<% for places in @places %>
+  <div class="places">
+    <h2><%= link_to places.name, places %></h2>
+    <div class="details">
+      <%= number_to_currency(product.price) %> |
+      Released <%= product.released_at.strftime("%B %e, %Y") %>
+    </div>
+  </div>
+<% end %>
+
+<p><%= link_to "New Places", new_places_path %></p>
